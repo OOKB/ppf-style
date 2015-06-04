@@ -1,0 +1,623 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+@import url(http://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic,700,700italic);
+/* ------------------------------------------------------*/
+/* ---------->>> everything gets imported! <<<-----------*/
+/* ------------------------------------------------------*/
+/* ============================ RESET ============================ */
+/* ===== Eric Meyer Reset ===== */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1.33;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ===== CUSTOM RESET ===== */
+object {
+  outline: none;
+  display: block;
+  overflow: hidden;
+}
+/* force redraw on IE8, fix outline/scroll bug on Firefox 3.6, remove unnecessary margin (copied from swffit)  */
+textarea {
+  overflow: auto;
+}
+/* fix IE */
+iframe {
+  border: 0;
+}
+/* fix line-height [https://gist.github.com/413930] */
+sup,
+sub {
+  line-height: 0;
+  font-size: .75em;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* ============================ /RESET ============================ */
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  /* type stuff */
+  /**/
+  -moz-font-feature-settings: "kern";
+  -webkit-font-feature-settings: "kern";
+  -ms-font-feature-settings: "kern";
+  -o-font-feature-settings: "kern";
+  font-feature-settings: "kern";
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+/* super simple CF from the very end of here: http://css-tricks.com/snippets/css/clear-fix/ — only works in IE8+, so not so super back compatible — but we're looking to the future! */
+.clearfix::after,
+.group::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.text-center,
+.center-text {
+  text-align: center;
+}
+.text-left,
+.left-align-text {
+  text-align: left;
+}
+.text-right,
+.right-align-text {
+  text-align: right;
+}
+/* columnar stuff */
+.container {
+  margin: 0 auto;
+  padding: 0 1rem 2rem 1rem;
+  width: 100%;
+}
+.column,
+.columns {
+  margin: 0 0 2rem 0;
+  padding: 0;
+}
+.group {
+  margin: 0 0 2rem 0;
+}
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.halfwidth,
+.seven,
+.eight,
+.nine,
+.ten,
+.eleven,
+.twelve,
+.fullwidth {
+  width: calc(100%);
+}
+.visible-lg {
+  display: none;
+  visibility: hidden;
+}
+@media (min-width: 30rem) {
+  .container {
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    min-width: 30rem;
+    width: 80%;
+  }
+}
+@media (min-width: 50rem) {
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  .clear,
+  .clearBoth {
+    display: block;
+    clear: both;
+  }
+  .clearLeft {
+    display: block;
+    clear: left;
+  }
+  .clearRight {
+    display: block;
+    clear: right;
+  }
+  .container {
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    max-width: 75rem;
+  }
+  /* columnar stuff */
+  .column,
+  .columns {
+    float: left;
+    margin: 0 0 2rem 0;
+    padding: 0 1rem;
+  }
+  .group {
+    margin: 0 -1rem 2rem -1rem;
+  }
+  /* default 12 column grid */
+  .one {
+    width: calc(8.33333333%);
+  }
+  .two {
+    width: calc(16.66666667%);
+  }
+  .three {
+    width: calc(25%);
+  }
+  .four {
+    width: calc(33.33333333%);
+  }
+  .five {
+    width: calc(41.66666667%);
+  }
+  .six,
+  .halfwidth {
+    width: calc(50%);
+  }
+  .seven {
+    width: calc(58.33333333%);
+  }
+  .eight {
+    width: calc(66.66666667%);
+  }
+  .nine {
+    width: calc(75%);
+  }
+  .ten {
+    width: calc(83.33333333%);
+  }
+  .eleven {
+    width: calc(91.66666667%);
+  }
+  .twelve,
+  .fullwidth {
+    width: calc(100%);
+  }
+  /* some standard offsets */
+  .offset-by-one {
+    margin-left: calc(8.33333333%);
+  }
+  .offset-by-two {
+    margin-left: calc(16.66666667%);
+  }
+  .offset-by-three {
+    margin-left: calc(25%);
+  }
+  .offset-by-four {
+    margin-left: calc(33.33333333%);
+  }
+  .offset-by-five {
+    margin-left: calc(41.66666667%);
+  }
+  .offset-by-six,
+  .offset-by-hal {
+    margin-left: calc(50%);
+  }
+  .offset-by-seven {
+    margin-left: calc(58.33333333%);
+  }
+  .offset-by-eight {
+    margin-left: calc(66.66666667%);
+  }
+  .offset-by-nine {
+    margin-left: calc(75%);
+  }
+  .offset-by-ten {
+    margin-left: calc(83.33333333%);
+  }
+  .offset-by-eleven {
+    margin-left: calc(91.66666667%);
+  }
+  .offset-by-twelve {
+    margin-left: calc(100%);
+  }
+  .visible-lg {
+    display: block;
+    visibility: visible;
+  }
+}
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 100% so that all the REM measurements throughout this doc are
+are based on 16px sizing. So basically 1rem = 16px :) — should a better solution be devised? */
+html {
+  font-size: 100%;
+}
+body {
+  font-size: 1em;
+  /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.5;
+  font-weight: 400;
+  /* do I want a better, wider ranging font-stack? */
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #231f20;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  text-rendering: optimizeLegibility;
+}
+/* Base Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  line-height: normal;
+}
+h1 {
+  font-size: 3.0rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2.0rem;
+}
+h4 {
+  font-size: 1.75rem;
+}
+h5 {
+  font-size: 1.5rem;
+}
+h6 {
+  font-size: 1.33rem;
+}
+/* Larger than phablet */
+/* these aren't currently being changed... though perhaps they need to be */
+@media (min-width: 30rem) {
+  h1 {
+    font-size: 3.0rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2.0rem;
+  }
+  h4 {
+    font-size: 1.75rem;
+  }
+  h5 {
+    font-size: 1.5rem;
+  }
+  h6 {
+    font-size: 1.33rem;
+  }
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+  line-height: normal;
+}
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: normal;
+}
+ul {
+  margin-bottom: 1em;
+  line-height: normal;
+}
+small,
+.small {
+  font-size: .9rem;
+}
+img {
+  max-width: 100%;
+}
+/* Centering in the unknown */
+/* from http://css-tricks.com/centering-in-the-unknown/
+  ---------------------------------------------------------*/
+/* This parent can be any width and height */
+.block {
+  text-align: center;
+}
+/* The ghost, nudged to maintain perfect centering */
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+  /* Adjusts for spacing */
+}
+/* The element to be centered, can
+   also be of any width and height */
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+}
+/* ----------------------------------------------------*/
+/* --------------->>> fontface.less <<<----------------*/
+/* ----------------------------------------------------*/
+/* ----------------------------------------------------*/
+/* ------------->>> /end fontface.less <<<-------------*/
+/* ----------------------------------------------------*/
+body {
+  padding-top: 60px;
+  padding-bottom: 300px;
+  font-family: 'Gentium Basic', 'Liberation Serif', 'Droid Serif', Constantia, Georgia, serif;
+}
+body .container {
+  max-width: 700px;
+}
+img.logo {
+  max-width: 100%;
+}
+.border-top {
+  border-top: 1.5px solid black;
+  margin-top: 60px;
+  padding-top: 60px;
+}
+#carousel-example-generic {
+  height: 555px;
+  max-height: auto;
+  height: 700px;
+}
+p.caption {
+  width: 75%;
+  margin: 1em auto;
+}
+.clear {
+  display: block;
+  clear: both;
+}
+/* Header
+   ============= */
+header {
+  margin-bottom: 6rem;
+}
+header h1 {
+  display: none;
+}
+header h2 {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+@media (min-width: 40em) {
+  header h2 {
+    font-size: 2rem;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* Slideshow
+   ============= */
+ul.insta-list {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+ul.insta-list li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 280px;
+  width: 280px;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+ul.insta-list li.active {
+  z-index: 10;
+  opacity: 1;
+}
+ul.insta-list li p {
+  display: none;
+}
+ul.insta-list li:hover p {
+  display: block;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  padding: 1em;
+  width: 100%;
+  position: absolute;
+  z-index: 11;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 400px) {
+  ul.insta-list,
+  ul.insta-list li {
+    width: 320px;
+    height: 320px;
+  }
+}
+@media (min-width: 500px) {
+  ul.insta-list,
+  ul.insta-list li {
+    width: 400px;
+    height: 400px;
+  }
+}
+@media (min-width: 600px) {
+  ul.insta-list,
+  ul.insta-list li {
+    width: 480px;
+    height: 480px;
+  }
+}
+@media (min-width: 700px) {
+  ul.insta-list,
+  ul.insta-list li {
+    width: 560px;
+    height: 560px;
+  }
+}
+@media (min-width: 800px) {
+  ul.insta-list,
+  ul.insta-list li {
+    width: 640px;
+    height: 640px;
+  }
+}
+/* Contact / Wufoo
+   ========================= */
+.contact {
+  margin-top: 6rem;
+}
+/* Footer
+   =========== */
+footer {
+  border-top: 1px solid black;
+  margin-top: 6rem;
+  padding-top: 2rem;
+}
